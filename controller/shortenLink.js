@@ -7,7 +7,7 @@ exports.newShortLink = async (req, res) => {
     const shortId = shortid.generate();
     console.log(shortId);
     const ngrokUrl = "https://a2cc-118-99-83-54.ngrok-free.app";
-    const local = "http://localhost:3014/";
+    const local = `http://localhost:${process.env.PORT}/`;
     const link = await shorten_links.create({
       codeLink: codeLink,
       originalLink: originalLink,
